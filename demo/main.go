@@ -20,7 +20,7 @@ func main() {
 	recv := make(chan interface{}, 1)
 	// start the p2p node
 	go func() {
-		err := dotray.StartNode(*laddr, *saddr, send, recv)
+		err := dagchain.StartNode(*laddr, *saddr, send, recv)
 		if err != nil {
 			panic("node start panic:" + err.Error())
 		}
@@ -30,7 +30,7 @@ func main() {
 	time.Sleep(1 * time.Second)
 
 	// query 10 nodes address from p2p network
-	addrs := dotray.QueryNodes(10)
+	addrs := dagchain.QueryNodes(10)
 
 	// excute some actions with the nodes address,like downloads blockchain from these nodes
 	// all depends on yourself
@@ -52,7 +52,7 @@ func main() {
 	for {
 		select {
 		case r := <-recv:
-			res := r.(*dotray.Request)
+			res := r.(*dagchain.Request)
 			fmt.Printf("receive message: %v from other node: \"%s\" \n", res.Data, res.From)
 		}
 	}

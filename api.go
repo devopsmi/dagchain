@@ -1,4 +1,4 @@
-package dotray
+package dagchain
 
 // QueryNodes , just query nodes info from p2p, the actions followed has noting to do with p2p
 func QueryNodes(max int) []string {
