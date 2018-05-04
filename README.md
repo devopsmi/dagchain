@@ -89,12 +89,12 @@ func main() {
 #### terminal
 ##### open the first terminal
 ```
-go run main.go -l localhost:2000
+go run main.go -l localhost:2000 -m -i 1
 ```
 
 ##### open the second terminal
 ```
-go run main.go -l localhost:2001 -s localhost:2000 
+go run main.go -l localhost:2001 -s localhost:2000 -m -i 2
 ``` 
 
 ##### the third
@@ -104,7 +104,7 @@ go run main.go -l localhost:2002 -s localhost:2001 -m -i 3
 
 ##### the fourth
 ```
-go run main.go -l localhost:2003 -s localhost:2002
+go run main.go -l localhost:2003 -s localhost:2002 -m -i 4
 ```
 
 ##### the fifth
