@@ -44,7 +44,7 @@ func main() {
 
 	send := make(chan interface{}, 1)
 	recv := make(chan interface{}, 1)
-    // start the p2p node
+	// start the p2p node
 	go func() {
 		err := dagchain.StartNode(*laddr, *saddr, send, recv)
 		if err != nil {
@@ -58,11 +58,11 @@ func main() {
 	// query 10 nodes address from p2p network
 	addrs := dagchain.QueryNodes(10)
 
-    // excute some actions with the nodes address,like downloads blockchain from these nodes
-    // all depends on yourself
-    fmt.Println("query nodes:", addrs)
+	// excute some actions with the nodes address,like downloads blockchain from these nodes
+	// all depends on yourself
+	fmt.Println("query nodes:", addrs)
     
-    // send message to all the other nodes
+	// send message to all the other nodes
 	if *messaging {
 		data := "hello-" + *id
 		go func() {
@@ -74,7 +74,7 @@ func main() {
 		}()
 	}
 
-    // receive message from other nodes
+	// receive message from other nodes
 	for {
 		select {
 		case r := <-recv:
