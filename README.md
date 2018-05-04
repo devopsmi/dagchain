@@ -43,7 +43,7 @@ func main() {
 	flag.Parse()
 
 	send := make(chan interface{}, 1)
-    recv := make(chan interface{}, 1)
+	recv := make(chan interface{}, 1)
     // start the p2p node
 	go func() {
 		err := dagchain.StartNode(*laddr, *saddr, send, recv)
