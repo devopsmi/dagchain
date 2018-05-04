@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/beewit/dagchain"
+	"github.com/465583030/dagchain"
 )
 
 var laddr = flag.String("l", "", "")
