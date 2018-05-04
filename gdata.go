@@ -1,4 +1,4 @@
-package dotray
+package dagchain
 
 import "sync"
 
